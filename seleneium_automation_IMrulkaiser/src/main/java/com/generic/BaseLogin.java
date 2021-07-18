@@ -14,21 +14,27 @@ public class BaseLogin{
 		WebDriver driver=new ChromeDriver();
 		driver.navigate().to(ConfigProperty.getconfigfile("URL"));
 		driver.manage().window();
-	MasterPF obj=new MasterPF(driver);
+		MasterPF obj =new MasterPF(driver);
+		
+		
 	ScreenShot.getpic(driver, "before signin");
+	 
 	 Highlighter.addcolor(driver,obj.getSigninbtn());
-	obj.getSigninbtn().click();
+	 obj.getSigninbtn().click();
 	
 	 Highlighter.addcolor(driver,obj.getEmail());
 	obj.getEmail().sendKeys(ConfigProperty.getconfigfile("username"));
 	
 	 Highlighter.addcolor(driver,obj.getPassword());
 	obj.getPassword().sendKeys(ConfigProperty.getconfigfile("password"));
+	
+	
 	 Highlighter.addcolor(driver,obj.getSubmit());
-	 
 	 obj.getSubmit().click();
+	 
 	 ScreenShot.getpic(driver, "before signout");
 	 Highlighter.addcolor(driver,obj.getSignout());
-	obj.getSignout().click();
+	 obj.getSignout().click();
+	
 	}
 }

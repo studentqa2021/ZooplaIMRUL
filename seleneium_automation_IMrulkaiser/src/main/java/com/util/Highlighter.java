@@ -10,5 +10,7 @@ public static void addcolor(WebDriver driver,WebElement element){
     
 	js.executeScript("arguments[0].setAttribute('style', 'background: light blue; border: 3px solid red;');", element);
 	}
+
+
 }
 
